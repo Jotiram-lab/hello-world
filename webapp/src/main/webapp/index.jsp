@@ -1,37 +1,52 @@
-<form action="action_page.php">
-  <div class="container">
-    <h1>New user Register for DevOps Learning</h1>
-    <p>Please fill in this form to create an account.</p>
-    <hr>
-     
-    <label for="Name"><b>Enter Name</b></label>
-    <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
-    <br>
-    
-    <label for="mobile"><b>Enter mobile</b></label>
-    <input type="text" placeholder="Enter moible number" name="mobile" id="mobile" required>
-    <br>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voting App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="app-wrapper">
+        <header>
+            <h1>Vote for Your Candidate</h1>
+            <p>Cast your vote and watch the live results!</p>
+        </header>
 
-    <label for="email"><b>Enter Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
-    <br>
+        <main class="voting-section">
+            <div class="candidate-card">
+                <img src="https://img.freepik.com/premium-photo/avatar-resourcing-company_1254967-6696.jpg" alt="Candidate A">
+                <h2>Candidate A</h2>
+                <button onclick="vote('A')">Vote for A</button>
+            </div>
+            <div class="candidate-card">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-with-online-avatar_23-2151303097.jpg" alt="Candidate B">
+                <h2>Candidate B</h2>
+                <button onclick="vote('B')">Vote for B</button>
+            </div>
+            <div class="candidate-card">
+                <img src="https://img.freepik.com/free-psd/3d-illustration-business-man-with-glasses_23-2149436194.jpg?w=740" alt="Candidate C">
+                <h2>Candidate C</h2>
+                <button onclick="vote('C')">Vote for C</button>
+            </div>
+        </main>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
-    <br>
+        <section class="results-section">
+            <h2>Live Voting Results</h2>
+            <canvas id="resultsChart"></canvas>
+            <p>Total Votes: <span id="totalVotes">0</span></p>
+            <div id="detailedResults" style="display:none;">
+                <h3>Vote Breakdown:</h3>
+                <p>Candidate A: <span id="votesA">0</span> votes (<span id="percentA">0%</span>)</p>
+                <p>Candidate B: <span id="votesB">0</span> votes (<span id="percentB">0%</span>)</p>
+                <p>Candidate C: <span id="votesC">0</span> votes (<span id="percentC">0%</span>)</p>
+            </div>
+            <button id="showResults" onclick="showDetailedResults()">Show Results</button>
+            <button id="reset" onclick="resetVotes()">Reset</button>
+        </section>
+    </div>
 
-    <label for="psw-repeat"><b>Repeat Password</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
-    <hr>
-    <br>
-    <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
-    <button type="submit" class="registerbtn">Register</button>
-  </div>
-  <div class="container signin">
-    <p>Already have an account? <a href="#">Sign in</a>.</p>
-  </div>
-
-   <h1> Thankyou, Happy Learning </h1>
-
-  
-</form>
+    <script src="script.js"></script>
+</body>
+</html>
